@@ -1,4 +1,4 @@
-FROM gianebao/bitbucket-pipeline-go-mysql
+FROM codeship/aws-deployment
 
 RUN \
   curl -o /usr/local/bin/ecs-cli \
