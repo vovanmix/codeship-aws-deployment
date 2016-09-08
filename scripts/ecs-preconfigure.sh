@@ -27,7 +27,7 @@ ecs-cli up --capability-iam --verbose \
   --vpc $AWS_EC2_VPC \
   --subnets $AWS_EC2_SUBNETS
 
-for arg in "$@:2" do
+for arg in "$@:2"; do
   echo "${arg}=${$arg}"
 done > $ECS_ENVFILE
 
