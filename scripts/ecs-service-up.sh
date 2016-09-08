@@ -3,6 +3,6 @@
 # exit on error
 set -eu
 
-ecs-preconfigure.sh "$@:2"
+ecs-preconfigure.sh "$@"
 
 ecs-cli compose -f $ECS_DEPLOYMENT service up
