@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # exit on error
-set -eux
+set -eu
 
 # s3://vcard-releases/accessman
 PROJECT=accessman
