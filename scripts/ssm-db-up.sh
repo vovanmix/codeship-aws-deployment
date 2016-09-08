@@ -48,8 +48,8 @@ while true; do
 
  if [ "$CMD_OUT" != "Pending" ] && [ "$CMD_OUT" != "InProgress"  ]; then
   if [ "$CMD_OUT" != "Success" ]; then
-    printf `aws ssm list-command-invocations --command-id $CMD_ID --details \
-     --output text --query "CommandInvocations[*].CommandPlugins[*].Output"`
+    aws ssm list-command-invocations --command-id $CMD_ID --details \
+     --output text --query "CommandInvocations[*].CommandPlugins[*].Output"
     exit 1
   fi
   break
@@ -59,5 +59,6 @@ while true; do
  sleep 5s
 done
 
-printf `aws ssm list-command-invocations --command-id $CMD_ID --details \
- --output text --query "CommandInvocations[*].CommandPlugins[*].Output"`
+echo "[STATUS] $CMD_OUT:"
+aws ssm list-command-invocations --command-id $CMD_ID --details \
+ --output text --query "CommandInvocations[*].CommandPlugins[*].Output"
