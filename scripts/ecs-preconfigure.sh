@@ -3,9 +3,6 @@
 # exit on error
 set -eu
 
-export ECS_ENVFILE=/app.env
-export ECS_DEPLOYMENT=/deployment.yml
-
 if [ ! -f /usr/local/bin/ecs-cli ]; then
   ECSCLI_SRC=https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
   curl -o /usr/local/bin/ecs-cli $ECSCLI_SRC
@@ -29,6 +26,6 @@ ecs-cli up --capability-iam --verbose \
 
 for arg in "${@:2}"; do
   echo "$arg="$(eval echo \$$arg)
-done > $ECS_ENVFILE
+done > /app.env
 
-sh $1 > $ECS_DEPLOYMENT
+sh $1 > /deployment.yml
