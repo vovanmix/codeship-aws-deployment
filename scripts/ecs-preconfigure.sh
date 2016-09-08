@@ -28,7 +28,7 @@ ecs-cli up --capability-iam --verbose \
   --subnets $AWS_EC2_SUBNETS
 
 for arg in "$@:2" do
-  echo ${arg}=${$arg}
+  echo "${arg}=${$arg}"
 done > $ECS_ENVFILE
 
 sh $1 > $ECS_DEPLOYMENT
