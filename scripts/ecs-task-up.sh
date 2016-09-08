@@ -5,4 +5,4 @@ set -eu
 
 ecs-preconfigure.sh "$@:2"
 
-ecs-cli compose -f /deployment.yml up
+ecs-cli compose -f $ECS_DEPLOYMENT up
