@@ -29,6 +29,3 @@ for arg in "${@:2}"; do
 done > $ECS_ENVFILE
 
 sh $1 > $ECS_DEPLOYMENT
-
-cat $ECS_ENVFILE
-cat $ECS_DEPLOYMENT

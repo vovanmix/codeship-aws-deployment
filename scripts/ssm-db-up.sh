@@ -15,7 +15,7 @@ FULL_PKG_NAME=${PKG_NAME}db.tar.gz
 S3_PKG_PATH=${AWS_S3_BUCKET_ARTIFACT}/${FULL_PKG_NAME}
 
 # Skipping if checksum was uploaded
-if [ 0 -e $(aws s3 ls $S3_PKG_PATH | wc -l) ]; then
+if [ "0" != "$(aws s3 ls $S3_PKG_PATH | wc -l)" ]; then
  echo "[Skipping] No Database change."
  exit 0
 fi

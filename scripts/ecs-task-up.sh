@@ -5,4 +5,4 @@ set -eu
 
 ecs-preconfigure.sh "$@"
 
-ecs-cli compose -f $ECS_DEPLOYMENT up
+ecs-cli compose -f $ECS_DEPLOYMENT --project-name data up
