@@ -10,7 +10,7 @@ ecs-cli compose -f $ECS_DEPLOYMENT --project-name data \
  --deployment-max-percent $AWS_ECS_TASK_MAX_PERCENT \
  --deployment-min-healthy-percent $AWS_ECS_TASK_HEALTH_MIN_PERCENT
 
-cs-cli compose -f $ECS_DEPLOYMENT --project-name data \
+ecs-cli compose -f $ECS_DEPLOYMENT --project-name data \
  scale \
  --deployment-max-percent $AWS_ECS_TASK_MAX_PERCENT \
  --deployment-min-healthy-percent $AWS_ECS_TASK_HEALTH_MIN_PERCENT \
